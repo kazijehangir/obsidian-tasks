@@ -1,15 +1,15 @@
 import { App, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
 
-interface MyPluginSettings {
+interface ObsidianTasksSettings {
 	mySetting: string;
 }
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
+const DEFAULT_SETTINGS: ObsidianTasksSettings = {
 	mySetting: 'default'
 }
 
-export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+export default class ObsidianTasks extends Plugin {
+	settings: ObsidianTasksSettings;
 
 	async onload() {
 		console.log('loading plugin');
@@ -83,9 +83,9 @@ class SampleModal extends Modal {
 }
 
 class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+	plugin: ObsidianTasks;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: ObsidianTasks) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
